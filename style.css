@@ -127,3 +127,171 @@ footer {
   text-align: center;
   padding: 20px;
 }
+/* style.css */
+
+/* Importa a fonte Inter do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* Estilos gerais para o corpo do documento */
+body {
+    font-family: 'Inter', sans-serif; /* Aplica a fonte Inter */
+    background-color: #f3f4f6; /* Cor de fundo leve */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem; /* Preenchimento em volta do corpo */
+    min-height: 100vh; /* Garante que o corpo ocupa toda a altura da viewport */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+}
+
+/* Estilo para o container principal do mural */
+main {
+    position: relative; /* Necessário para posicionar os pseudo-elementos */
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 1rem; /* Cantos arredondados */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    padding: 2rem; /* Preenchimento interno */
+    width: 100%;
+    max-width: 64rem; /* Largura máxima para o mural */
+    border: 4px solid #10B981; /* Borda verde escura */
+    overflow: hidden; /* Garante que as folhas não vazem */
+}
+
+/* Estilos para as decorações de folha (pseudo-elementos) */
+.leaf-decoration {
+    position: absolute;
+    width: 80px; /* Tamanho da folha */
+    height: 80px; /* Tamanho da folha */
+    background-color: #D1FAE5; /* Cor de fundo da folha */
+    border-radius: 50%; /* Faz um círculo */
+    opacity: 0.7; /* Transparência */
+    z-index: 0; /* Garante que fique atrás do conteúdo */
+}
+
+.leaf-decoration::before,
+.leaf-decoration::after {
+    content: '';
+    position: absolute;
+    background-color: #D1FAE5;
+    border-radius: 50%;
+}
+
+/* Topo esquerdo */
+.leaf-decoration.top-left {
+    top: -40px; /* Metade para fora */
+    left: -40px; /* Metade para fora */
+    transform: rotate(45deg); /* Rotação para parecer uma folha */
+}
+
+.leaf-decoration.top-left::before {
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    left: 20px;
+    transform: rotate(-90deg);
+}
+
+.leaf-decoration.top-left::after {
+    width: 40px;
+    height: 40px;
+    top: 50px;
+    left: 50px;
+    transform: rotate(90deg);
+}
+
+/* Topo direito */
+.leaf-decoration.top-right {
+    top: -40px;
+    right: -40px;
+    transform: rotate(-45deg);
+}
+
+.leaf-decoration.top-right::before {
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    right: 20px;
+    transform: rotate(90deg);
+}
+
+.leaf-decoration.top-right::after {
+    width: 40px;
+    height: 40px;
+    top: 50px;
+    right: 50px;
+    transform: rotate(-90deg);
+}
+
+/* Estilos para as seções de depoimentos e informações */
+section {
+    position: relative; /* Para garantir que o conteúdo fique acima das decorações */
+    z-index: 1;
+}
+
+/* Estilo para os cards de depoimentos */
+.testimonial-card {
+    background-color: #ecfdf5; /* Verde muito claro */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #a7f3d0; /* Borda verde clara */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Estilo para os botões "GOSTOU?" */
+button {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05); /* Efeito de escala ao passar o mouse */
+}
+
+/* Estilo para o rodapé */
+footer {
+    margin-top: 2rem;
+    color: #6b7280; /* Cor de texto cinza */
+    font-size: 0.875rem; /* Tamanho de fonte pequeno */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem; /* Menor preenchimento em telas pequenas */
+    }
+
+    .leaf-decoration {
+        width: 60px; /* Folhas menores */
+        height: 60px;
+    }
+
+    .leaf-decoration.top-left {
+        top: -30px;
+        left: -30px;
+    }
+
+    .leaf-decoration.top-right {
+        top: -30px;
+        right: -30px;
+    }
+
+    .leaf-decoration.top-left::before {
+        width: 45px;
+        height: 45px;
+    }
+    .leaf-decoration.top-left::after {
+        width: 30px;
+        height: 30px;
+    }
+    .leaf-decoration.top-right::before {
+        width: 45px;
+        height: 45px;
+    }
+    .leaf-decoration.top-right::after {
+        width: 30px;
+        height: 30px;
+    }
+}
