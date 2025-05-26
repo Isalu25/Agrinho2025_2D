@@ -50,7 +50,7 @@ main {
 /* Topo esquerdo */
 .leaf-decoration.top-left {
     top: -40px; /* Metade para fora */
-    left: -40px; /* Metade para fora */
+    left: -40px; /* Metade parCONTINUa fora */
     transform: rotate(45deg); /* Rotação para parecer uma folha */
 }
 
